@@ -1,5 +1,6 @@
 package com.narxoz.rpg.battle;
 
+<<<<<<< HEAD
 import com.narxoz.rpg.adapter.Combatant;
 
 import java.util.Iterator;
@@ -13,6 +14,16 @@ public class BattleEngine {
 
     private BattleEngine() {
         this.random = new Random();
+=======
+import java.util.List;
+import java.util.Random;
+
+public final class BattleEngine {
+    private static BattleEngine instance;
+    private Random random = new Random(1L);
+
+    private BattleEngine() {
+>>>>>>> 016c9dc0046ff3c12de1cc5c4e9e7de99d9e1c43
     }
 
     public static BattleEngine getInstance() {
@@ -28,6 +39,7 @@ public class BattleEngine {
     }
 
     public void reset() {
+<<<<<<< HEAD
         instance = null;
     }
 
@@ -80,3 +92,18 @@ public class BattleEngine {
         }
     }
 }
+=======
+        // TODO: reset any battle state if you add it
+    }
+
+    public EncounterResult runEncounter(List<Combatant> teamA, List<Combatant> teamB) {
+        // TODO: validate inputs and run round-based battle
+        // TODO: use random if you add critical hits or target selection
+        EncounterResult result = new EncounterResult();
+        result.setWinner("TBD");
+        result.setRounds(0);
+        result.addLog("TODO: implement battle simulation");
+        return result;
+    }
+}
+>>>>>>> 016c9dc0046ff3c12de1cc5c4e9e7de99d9e1c43
