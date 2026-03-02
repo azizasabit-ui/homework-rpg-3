@@ -23,7 +23,7 @@ public class BasicEnemy implements Enemy {
 
     @Override
     public void applyDamage(int amount) {
-        // TODO: enforce min 0
+       
         health -= amount;
         if (health < 0) {
             health = 0;
@@ -37,5 +37,10 @@ public class BasicEnemy implements Enemy {
 
     public int getHealth() {
         return health;
+    }
+
+    @Override
+    public boolean isAlive() {
+        throw new UnsupportedOperationException("Unimplemented method 'isAlive'");
     }
 }

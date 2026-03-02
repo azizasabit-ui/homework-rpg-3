@@ -1,0 +1,22 @@
+SINGLETON PATTERN UML DIAGRAM
+
++---------------------+
+|    BattleEngine     |
++---------------------+
+| - instance: BattleEngine (static) |
+| - random: Random     |
+| - battleLog: List<String> |
++---------------------+
+| - BattleEngine()    |
+| + getInstance(): BattleEngine (static) |
+| + setRandomSeed(seed: long): BattleEngine |
+| + reset(): void     |
+| + runEncounter(teamA: List<Combatant>, teamB: List<Combatant>): EncounterResult |
++---------------------+
+          |
+          | 1
+          |
+          V
++---------------------+
+|   Main (клиент)     |
++---------------------+

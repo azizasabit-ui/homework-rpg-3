@@ -1,0 +1,57 @@
+ADAPTER PATTERN UML DIAGRAM
+                    +-------------------+
+                    |    Combatant      | (interface)
+                    +-------------------+
+                    | + getName(): String |
+                    | + getAttackPower(): int |
+                    | + takeDamage(amount: int): void |
+                    | + isAlive(): boolean |
+                    +-------------------+
+                          ^           ^
+                          |           |
+         +----------------+           +----------------+
+         |                                              |
++-----------------------+                  +-----------------------+
+|  HeroCombatantAdapter  |                  |  EnemyCombatantAdapter |
++-----------------------+                  +-----------------------+
+| - hero: Hero          |                  | - enemy: Enemy        |
++-----------------------+                  +-----------------------+
+| + getName(): String   |                  | + getName(): String   |
+| + getAttackPower(): int|                  | + getAttackPower(): int|
+| + takeDamage(amount: int): void|          | + takeDamage(amount: int): void|
+| + isAlive(): boolean  |                  | + isAlive(): boolean  |
++-----------------------+                  +-----------------------+
+          |                                              |
+          |                                              |
+          V                                              V
++-----------------------+                  +-----------------------+
+|        Hero           | (interface)      |        Enemy          | (interface)
++-----------------------+                  +-----------------------+
+| + getName(): String   |                  | + getTitle(): String  |
+| + getPower(): int     |                  | + getDamage(): int    |
+| + receiveDamage(amount: int): void|      | + applyDamage(amount: int): void|
+| + isAlive(): boolean  |                  | + isDefeated(): boolean|
++-----------------------+                  +-----------------------+
+          ^                                              ^
+          |                                              |
+          |                                              |
++-----------------------+                  +-----------------------+
+|       Warrior         |                  |      BasicEnemy       |
++-----------------------+                  +-----------------------+
+| - name: String        |                  | - title: String       |
+| - power: int          |                  | - damage: int         |
+| - health: int         |                  | - health: int         |
++-----------------------+                  +-----------------------+
+| + Warrior(name: String)|                  | + BasicEnemy(title: String,|
+| + all methods from Hero|                  |            damage: int,|
++-----------------------+                  |            health: int)|
+                                            +-----------------------+
+                                                    ^
+                                                    |
+                                                    |
+                                            +-----------------------+
+                                            |        Goblin         |
+                                            +-----------------------+
+                                            | + Goblin()            |
+                                            +-----------------------+
+
