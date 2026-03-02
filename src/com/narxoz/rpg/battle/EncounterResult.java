@@ -1,17 +1,5 @@
 package com.narxoz.rpg.battle;
 
-<<<<<<< HEAD
-public class EncounterResult {
-
-    private final String winner;
-    private final int rounds;
-
-    public EncounterResult(String winner, int rounds) {
-        this.winner = winner;
-        this.rounds = rounds;
-    }
-
-=======
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -33,7 +21,6 @@ public class EncounterResult {
         battleLog.add(line);
     }
 
->>>>>>> 016c9dc0046ff3c12de1cc5c4e9e7de99d9e1c43
     public String getWinner() {
         return winner;
     }
@@ -41,12 +28,21 @@ public class EncounterResult {
     public int getRounds() {
         return rounds;
     }
-<<<<<<< HEAD
-}
-=======
 
     public List<String> getBattleLog() {
         return Collections.unmodifiableList(battleLog);
     }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n=== ENCOUNTER RESULT ===\n");
+        sb.append("Winner: ").append(winner).append("\n");
+        sb.append("Rounds: ").append(rounds).append("\n");
+        sb.append("Battle Log:\n");
+        for (String log : battleLog) {
+            sb.append("  ").append(log).append("\n");
+        }
+        return sb.toString();
+    }
 }
->>>>>>> 016c9dc0046ff3c12de1cc5c4e9e7de99d9e1c43
